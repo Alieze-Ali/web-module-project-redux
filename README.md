@@ -29,16 +29,17 @@ In this project, you take a fairly complex application used to search a movie da
 
 * [a] In index.js, make use of the createStore method and Provider component to link your App to redux. -ok
 
+
 #### Task 3: Connecting the Movie reducer
 > *Within the reducers folder is the movieReducers file. We have the state already setup it up here with some initial data. Let's connect that state to our component.*
 
-* [a] **In movieReducer.js, make sure that we are setting our state by default to initialState.** Otherwise your state will not have the original structure it needs to function!
+* [a] **In movieReducer.js, make sure that we are setting our state by default to initialState.** Otherwise your state will not have the original structure it needs to function! -ok
 
-* [b] **The MovieList component prints all of our movies to the screen.** Use the connect method here to map the movies state value into props. Replace our static movie variable with that prop.
+* [b] **The MovieList component prints all of our movies to the screen.** 1.Use the connect method here to map the movies state value into props. 2.Replace our static movie variable with that prop. -ok
 
-* [c] **The Movie component needs to access our list of movies to function.** Map movies to props here as well.
+* [c] **The Movie component needs to access our list of movies to function.** Map movies to props here as well. -ok
 
-* [d] **Finally, MovieHeader uses appTitle to display the title text.** Connect this component to appTitle and test appTitle is correctly displayed in your app.
+* [d] **Finally, MovieHeader uses appTitle to display the title text.** Connect this component to appTitle and test appTitle is correctly displayed in your app. - ok I think.
 
 
 #### Task 4: Connecting the Delete and Add Movie actions
@@ -46,15 +47,20 @@ In this project, you take a fairly complex application used to search a movie da
 
 * [a] Note that the deleteMovie reducer case and action creator are already available.
 
-* [b] **We can delete movies within the Movie Component.** Connect the deleteMovie action through the connect method.
+* [b] **We can delete movies within the Movie Component.** Connect the deleteMovie action through the connect method. (goto Movie.js) -ok I think, but I don't fully understand
 
-* [c] **Find the HTML element that should trigger a deletion in the movie component.** Create and connect the necessary event handlers to call deleteMovie on the current movie's id. After setting the state, redirect the user using the push('/movies') command.
+* [c] **Find the HTML element that should trigger a deletion in the movie component.** Create and connect the necessary event handlers to call deleteMovie on the current movie's id. After setting the state, redirect the user using the push('/movies') command. -ok
 
 * [d] Add in an ADD_MOVIE case to movieReducer.js.
+
 * [e] Make this new case return a version of state with new movie values passed in through the payload.
+
 * [f] Create an action creator for addMovie in movieActions.js.
+
 * [g] Find the component that triggers the adding of a movie and connect the addMovie action.
+
 * [h] Create and connect the necessary event handlers to call addMovie.
+
 * [i] Add in push('/movies/) after calling your action to trigger a redirect.
 
 #### Task 5: Build out the favorites reducer
