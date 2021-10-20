@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// Task 3d-1: import connect method from react-redux
+import { connect } from 'react-redux';
 
 const MovieHeader = (props) => {
-    const appTitle = "";
+    // Task 3d-4: setting appTitle to props
+    const { appTitle } = props;
+    //const appTitle = "";
     const displayFavorites = true;
     
     return(<div className="table-title">
@@ -18,5 +22,13 @@ const MovieHeader = (props) => {
         </div>
     </div>);
 }
+// Task 3d-3: assigning mapStateToProps to state and connecting appTitle
+const mapStateToProps = state => {
+    return {
+        appTitle: state.appTitle
+    }
+}
 
-export default MovieHeader;
+// Task 3d-2: deploying the connect method and mapping state to props
+// export default MovieHeader;
+export default connect(mapStateToProps)(MovieHeader);

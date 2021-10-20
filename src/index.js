@@ -9,9 +9,14 @@ import App from './App'
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 
+// Task 2a: adding createStore method and Provider component to link you App to redux
+const store = createStore(reducer);
+
 ReactDOM.render(
+  <Provider store={store}>
   <Router>
       <App />
-  </Router>,
+  </Router>
+  </Provider>,
   document.getElementById('root')
 );

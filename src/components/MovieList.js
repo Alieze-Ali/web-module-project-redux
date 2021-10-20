@@ -1,10 +1,15 @@
 import React from 'react';
+// Task 3b-1: also a part of connecting the method
+import { connect } from 'react-redux';
 
 import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 
 const MovieList = (props)=> {
-    const movies = [];
+    // Task 3c - map movies to props so component can access list of movies
+    //const movies = [];
+    const { movies } = props;
+    console.log(props)
 
     return (
         <div className="col">
@@ -31,4 +36,13 @@ const MovieList = (props)=> {
     );
 }
 
-export default MovieList;
+// Task 3b-2: Replacing static movie var with that prop - I think
+const mapStateToProps = state => {
+    console.log(state);
+    return {
+        movies: state.movies                                        
+    }
+}
+
+// Task 3b-1: using the connect method to map the movies state value into props
+export default connect(mapStateToProps)(MovieList);

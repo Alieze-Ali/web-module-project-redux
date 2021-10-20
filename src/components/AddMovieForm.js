@@ -6,6 +6,8 @@ import { Link, useHistory } from 'react-router-dom';
 
 const AddMovieForm = (props) => {
     const { push } = useHistory();
+    // Task 4g: connecting the addMovie action
+    const { addMovie } = props;
 
     const [movie, setMovie] = useState({
         title: "",
@@ -22,7 +24,12 @@ const AddMovieForm = (props) => {
         });
     }
 
+    // Task 4h: I think this is the handler already started to call addMovie
     const handleSubmit = (e) => {
+        e.preventDefault()
+        props.addMovie(movie)
+        // Task 4i: add in push ('/movies/) to trigger a redirect
+        push('/movies/')
     }
 
     const { title, director, genre, metascore, description } = movie;
@@ -67,4 +74,11 @@ const AddMovieForm = (props) => {
     </div>);
 }
 
-export default AddMovieForm;
+//export default AddMovieForm;
+const mapStateToProps = state => {
+    return {
+        movies: state.movies
+    }
+}
+
+export default connect(mapStateToProps, {addMovie})(AddMovieForm);
